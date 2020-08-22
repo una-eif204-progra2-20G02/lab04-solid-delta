@@ -2,10 +2,13 @@
 #define LAB04_SOLID_PHYSICALGAME_H
 
 #include "Game.h"
+#include "IShippable.h"
 
-class PhysicalGame: public Game {
+class PhysicalGame: public Game, IShippable{
     double itemWeight;
     std::string productDimensions;
+
+    double discount() override;
 
 public:
     PhysicalGame();
@@ -25,11 +28,9 @@ public:
 
     const std::string &getProductDimensions() const;
 
-    double calculatePriceWithTax() override;
-
     std::string toString() const override;
 
-    std::string ship_game();
+    std::string ship() override;
 };
 
 #endif //LAB04_SOLID_PHYSICALGAME_H

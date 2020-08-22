@@ -26,9 +26,8 @@ const std::string &PhysicalGame::getProductDimensions() const {
     return productDimensions;
 }
 
-double PhysicalGame::calculatePriceWithTax() {
-    return getPrice();
-}
+
+double PhysicalGame::discount() { return getPrice(); }
 
 std::string PhysicalGame::toString() const {
     std::ostringstream output;
@@ -40,6 +39,4 @@ std::string PhysicalGame::toString() const {
     return output.str();
 }
 
-std::string PhysicalGame::ship_game() {
-    return "this product will have a shipment.";
-}
+std::string PhysicalGame::ship() { return "this product will have a shipment."; }

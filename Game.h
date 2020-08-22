@@ -8,11 +8,14 @@
 #include <fstream>
 #include <sstream>
 
+enum class Currency { USD, IDR, JPY };
+
 class Game {
-protected:
     std::string name;
     double price;
     double tax;
+
+    virtual double discount();
 
 public:
     Game();
@@ -33,7 +36,7 @@ public:
 
     void setTax(double tax);
 
-    virtual double calculatePriceWithTax()=0;
+    virtual double calculatePriceWithTax(Currency var);
 
     void save(const std::string &filename);
 

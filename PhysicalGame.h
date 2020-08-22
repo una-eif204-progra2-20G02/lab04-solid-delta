@@ -7,6 +7,8 @@ class PhysicalGame: public Game {
     double itemWeight;
     std::string productDimensions;
 
+    double discount() override;
+
 public:
     PhysicalGame();
 
@@ -24,8 +26,6 @@ public:
     double getItemWeight() const;
 
     const std::string &getProductDimensions() const;
-
-    double calculatePriceWithTax() override;
 
     std::string toString() const override;
 

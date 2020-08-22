@@ -4,15 +4,22 @@
 
 #ifndef LAB04_SOLID_GAME_H
 #define LAB04_SOLID_GAME_H
+#include <iomanip>
+#include <fstream>
 #include <sstream>
 
 class Game {
+protected:
+    std::string name;
+    double price;
+    double tax;
+
 public:
     Game();
 
     Game(const std::string &name, double price, double tax);
 
-    Game(const std::string &name, double price, double itemWeight, const std::string &productDimensions);
+    virtual ~Game();
 
     const std::string &getName() const;
 
@@ -26,26 +33,11 @@ public:
 
     void setTax(double tax);
 
-    double getItemWeight() const;
-
-    void setItemWeight(double itemWeight);
-
-    const std::string &getProductDimensions() const;
-
-    void setProductDimensions(const std::string &productDimensions);
-
-    double calculatePriceWithTax();
+    virtual double calculatePriceWithTax()=0;
 
     void save(const std::string &filename);
 
-    std::string toString();
-private:
-    std::string name;
-    double price;
-    double tax;
-    double itemWeight;
-    std::string productDimensions;
+    virtual std::string toString() const;
 };
-
 
 #endif //LAB04_SOLID_GAME_H

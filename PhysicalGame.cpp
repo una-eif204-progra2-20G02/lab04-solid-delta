@@ -39,6 +39,4 @@ std::string PhysicalGame::toString() const {
     return output.str();
 }
 
-std::string PhysicalGame::ship() {
-    return "this product will have a shipment.";
-}
+std::string PhysicalGame::ship() { return "this product will have a shipment."; }

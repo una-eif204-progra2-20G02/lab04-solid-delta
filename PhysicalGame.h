@@ -2,9 +2,9 @@
 #define LAB04_SOLID_PHYSICALGAME_H
 
 #include "Game.h"
-#include "IShippable"
+#include "IShippable.h"
 
-class PhysicalGame: public Game: public IShippable {
+class PhysicalGame: public Game, IShippable{
     double itemWeight;
     std::string productDimensions;
 
@@ -30,7 +30,7 @@ public:
 
     std::string toString() const override;
 
-    std::string ship();
+    std::string ship() override;
 };
 
 #endif //LAB04_SOLID_PHYSICALGAME_H

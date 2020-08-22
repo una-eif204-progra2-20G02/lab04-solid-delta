@@ -2,6 +2,8 @@
 #define LAB04_SOLID_PHYSICALGAME_H
 
 class IReplaceable{
-  public:
-   virtual void replace()=0;
-}
+public:
+    virtual void replace()=0;
+};
+
+#endif

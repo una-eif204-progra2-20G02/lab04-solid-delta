@@ -30,7 +30,7 @@ public:
 
     std::string toString() const override;
 
-    std::string ship() override;
+    void ship() override;
 };
 
 #endif //LAB04_SOLID_PHYSICALGAME_H

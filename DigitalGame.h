@@ -6,24 +6,34 @@
 #define LAB04_SOLID_DIGITALGAME_H
 
 #include "Game.h"
+#include "IReplaceable.h"
 
-class DigitalGame : public Game{
-public:
+class DigitalGame : public Game, IReplaceable{
     std::string file_path;
-    int discount=15;
-private:
+    float discount=0.15;
+
+public:
     DigitalGame();
+
     DigitalGame(const std::string &name, double price, double tax);
-    DigitalGame(const std::string &name, double price, double tax, std::string file_path, int discount);
+
+    DigitalGame(const std::string &name, double price, double tax, std::string file_path, float discount);
+
     virtual ~DigitalGame();
+
     std::string getFile_path();
+
     void setFile_path(std::string);
+
     int getDicount();
-    void setDiscount(int);
+
+    void setDiscount(float);
+
     double calculatePriceWithTax();
-    std::string replace_game();
+
+    void replace() override;
+
     std::string toString() const;
 };
-
 
 #endif //LAB04_SOLID_DIGITALGAME_H

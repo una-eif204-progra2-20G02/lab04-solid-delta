@@ -6,7 +6,7 @@
 
 DigitalGame::DigitalGame(){
     file_path="";
-    discount=15;
+    discount=0.15;
 }
 
 DigitalGame::DigitalGame(const std::string &name, double price, double tax):Game(name,price,tax){}
@@ -36,6 +36,10 @@ double DigitalGame::calculatePriceWithTax(){
 }
 
 void DigitalGame::replace() { "This product have a replacement"; }
+
+void DigitalGame::purchase(IReceiptSender* receipt_sender) {
+    receipt_sender->send_receipt();
+}
 
 std::string DigitalGame::toString() const{
     std::ostringstream output;

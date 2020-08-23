@@ -7,8 +7,9 @@
 
 #include "Game.h"
 #include "IReplaceable.h"
+#include "IReceiptSender.h"
 
-class DigitalGame : public Game, IReplaceable{
+class DigitalGame : public Game, IReplaceable, IReceiptSender {
     std::string file_path;
     float discount=0.15;
 
@@ -34,6 +35,8 @@ public:
     void replace() override;
 
     std::string toString() const;
+
+    void purchase(IReceiptSender*);
 };
 
 #endif //LAB04_SOLID_DIGITALGAME_H

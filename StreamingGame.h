@@ -3,9 +3,14 @@
 
 #include "Game.h"
 #include "IReplaceable.h"
+#include "IReceiptSender.h"
 
-class StreamingGame : public Game, IReplaceable {
+class StreamingGame : public Game, IReplaceable, IReceiptSender {
+
     float tax=0.15;
+
+    double discount() override;
+
 public:
     StreamingGame();
 
@@ -13,9 +18,9 @@ public:
 
     ~StreamingGame();
 
-    double calculatePriceWithTax();
-
     void replace() override;
+
+    void purchase(IReceiptSender*);
 
     std::string toString() const;
 };

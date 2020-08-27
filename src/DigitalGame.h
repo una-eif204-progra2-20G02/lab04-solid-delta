@@ -9,9 +9,9 @@
 #include "IReplaceable.h"
 #include "IReceiptSender.h"
 
-class DigitalGame : public Game, IReplaceable, IReceiptSender {
+class DigitalGame : public Game, IReceiptSender {
     std::string file_path;
-    float discount=0.15;
+    double discount=0.15;
 
 public:
     DigitalGame();
@@ -26,17 +26,19 @@ public:
 
     void setFile_path(std::string);
 
-    int getDicount();
+    double getDicount();
 
-    void setDiscount(float);
+    void setDiscount(double);
 
     double calculatePriceWithTax();
 
-    void replace() override;
+    virtual void replace();
 
     std::string toString() const;
 
     void purchase(IReceiptSender*);
+
+    void send_receipt() override;
 };
 
 #endif //LAB04_SOLID_DIGITALGAME_H

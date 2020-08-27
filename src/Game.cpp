@@ -36,7 +36,7 @@ void Game::setTax(double tax) {
 
 double Game::discount() { return getPrice(); }
 
-double Game::calculatePriceWithTax(Currency var) {auto final_price = discount();}
+double Game::calculatePriceWithTax(Currency var) { return getPrice() - (getPrice() * discount());}
 
 /*
  * Save the information into a text file

@@ -35,6 +35,7 @@
 .idea/
 /cmake-build-debug
 /sample
+lib/googletest
 *.DS_Store
 
 01_education

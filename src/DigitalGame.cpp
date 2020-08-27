@@ -23,11 +23,11 @@ void DigitalGame::setFile_path(std::string file_p){
     file_path=file_p;
 }
 
-int DigitalGame::getDicount(){
+double DigitalGame::getDicount(){
     return discount;
 }
 
-void DigitalGame::setDiscount(float dis){
+void DigitalGame::setDiscount(double dis){
     discount=dis;
 }
 
@@ -36,6 +36,8 @@ double DigitalGame::calculatePriceWithTax(){
 }
 
 void DigitalGame::replace() { "This product have a replacement"; }
+
+void DigitalGame::send_receipt() {}
 
 void DigitalGame::purchase(IReceiptSender* receipt_sender) {
     receipt_sender->send_receipt();

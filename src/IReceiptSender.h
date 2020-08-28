@@ -3,7 +3,7 @@
 
 class IReceiptSender {
 public:
-    virtual void send_receipt() = 0;
+    virtual std::string send_receipt() = 0;
 };
 
 #endif //LAB04_SOLID_IRECEIPTSENDER_H

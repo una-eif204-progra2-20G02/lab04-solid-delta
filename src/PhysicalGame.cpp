@@ -26,7 +26,6 @@ const std::string &PhysicalGame::getProductDimensions() const {
     return productDimensions;
 }
 
-
 double PhysicalGame::discount() { return getPrice(); }
 
 std::string PhysicalGame::toString() const {
@@ -37,6 +36,10 @@ std::string PhysicalGame::toString() const {
            << "\nProduct Dimensions: " << getProductDimensions()
            << "\nPrice with Tax: $" << getPrice();
     return output.str();
+}
+
+std::string PhysicalGame::saveData() {
+    return toString();
 }
 
 void PhysicalGame::ship() { "this product will have a shipment."; }

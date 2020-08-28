@@ -4,8 +4,9 @@
 #include "Game.h"
 #include "IReplaceable.h"
 #include "IReceiptSender.h"
+#include "ISaveGame.h"
 
-class StreamingGame : public Game, IReplaceable, IReceiptSender {
+class StreamingGame : public Game, public ISaveGame, public IReplaceable {
 
     float tax=0.15;
 
@@ -21,6 +22,8 @@ public:
     void replace() override;
 
     void purchase(IReceiptSender*);
+
+    std::string saveData() override;
 
     std::string toString() const;
 };

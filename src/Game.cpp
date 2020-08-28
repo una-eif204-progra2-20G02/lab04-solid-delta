@@ -38,18 +38,6 @@ double Game::discount() { return getPrice(); }
 
 double Game::calculatePriceWithTax(Currency var) { return getPrice() - (getPrice() * discount());}
 
-/*
- * Save the information into a text file
- * @param filename the name of the text file
- */
-void Game::save(const std::string &filename) {
-    std::ofstream ofs (filename, std::ofstream::out);
-
-    ofs << toString();
-
-    ofs.close();
-}
-
 std::string Game::toString() const{
     std::ostringstream output;
     output << std::fixed << std::setprecision(2);

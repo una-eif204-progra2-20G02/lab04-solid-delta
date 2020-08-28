@@ -3,8 +3,9 @@
 
 #include "Game.h"
 #include "IShippable.h"
+#include "ISaveGame.h"
 
-class PhysicalGame: public Game, IShippable{
+class PhysicalGame: public Game, public ISaveGame, public IShippable {
     double itemWeight;
     std::string productDimensions;
 
@@ -29,6 +30,8 @@ public:
     const std::string &getProductDimensions() const;
 
     std::string toString() const override;
+
+    std::string saveData() override;
 
     void ship() override;
 };

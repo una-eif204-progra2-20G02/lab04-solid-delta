@@ -37,10 +37,12 @@ double DigitalGame::calculatePriceWithTax(){
 
 void DigitalGame::replace() { "This product have a replacement"; }
 
-void DigitalGame::send_receipt() {}
-
 void DigitalGame::purchase(IReceiptSender* receipt_sender) {
     receipt_sender->send_receipt();
+}
+
+std::string DigitalGame::saveData() {
+    return toString();
 }
 
 std::string DigitalGame::toString() const{

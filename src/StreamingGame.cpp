@@ -14,6 +14,10 @@ void StreamingGame::purchase(IReceiptSender* receipt_sender) {
     receipt_sender->send_receipt();
 }
 
+std::string StreamingGame::saveData() {
+    return toString();
+}
+
 std::string StreamingGame::toString() const{
     std::ostringstream output;
     output << std::fixed << std::setprecision(2);

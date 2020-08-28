@@ -38,8 +38,6 @@ public:
 
     virtual double calculatePriceWithTax(Currency var);
 
-    void save(const std::string &filename);
-
     virtual std::string toString() const;
 };
 

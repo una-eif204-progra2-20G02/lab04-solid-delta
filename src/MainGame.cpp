@@ -14,7 +14,7 @@ int main() {
     game.setTax(0.13);
     std::cout << game.toString() << std::endl;
 
-    game.save("game.txt");
+    //game.save("game.txt");
 
     return 0;
 }

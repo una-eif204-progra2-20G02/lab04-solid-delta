@@ -4,6 +4,6 @@
 class IShippable {
 public:
     virtual void ship()=0;
+    virtual ~IShippable();
 };
-
 #endif //LAB04_SOLID_ISHIPPABLE_H

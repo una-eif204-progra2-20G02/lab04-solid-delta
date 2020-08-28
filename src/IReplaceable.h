@@ -4,6 +4,7 @@
 class IReplaceable{
 public:
     virtual void replace()=0;
+    virtual ~IReplaceable();
 };
 
 #endif

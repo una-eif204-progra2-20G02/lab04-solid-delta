@@ -4,7 +4,6 @@
 
 #include <iostream>
 #include "PhysicalGame.h"
-#include "DigitalGame.h"
 
 int main() {
     PhysicalGame game;

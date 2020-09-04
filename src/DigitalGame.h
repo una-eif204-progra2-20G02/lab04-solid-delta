@@ -31,7 +31,7 @@ public:
 
     void setDiscount(double);
 
-    double calculatePriceWithTax();
+    double calculatePriceWithTax() const;
 
     virtual void replace();
 

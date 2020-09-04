@@ -31,7 +31,7 @@ void DigitalGame::setDiscount(double dis){
     discount=dis;
 }
 
-double DigitalGame::calculatePriceWithTax(){
+double DigitalGame::calculatePriceWithTax() const{
     return getPrice()-(getPrice() * discount);
 }
 
@@ -49,6 +49,6 @@ std::string DigitalGame::toString() const{
     std::ostringstream output;
     output << std::fixed << std::setprecision(2);
     output << Game::toString()
-           << "\nPrice with Discount: $" << getPrice();
+           << "\nPrice with Discount: $" << calculatePriceWithTax();
     return output.str();
 }
